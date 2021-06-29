@@ -14,5 +14,6 @@
 + (instancetype)shared;
 
 - (void)getHomeTimelineWithCompletion:(void(^)(NSArray *tweets, NSError *error))completion;
+//add other functions for API reqs i want 
 
 @end
