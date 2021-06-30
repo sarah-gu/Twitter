@@ -89,10 +89,35 @@
     cell.tweetMessage.text = mytweet.text;
     cell.userName.text = mytweet.user.name;
     
+    cell.screenName.text = [NSString stringWithFormat:@"@%@", mytweet.user.screenName];
+    
+    if(mytweet.favorited == YES) {
+        [cell.likeButton setImage:[UIImage imageNamed:@"favor-icon-red"] forState: UIControlStateNormal];
+    }
+    else {
+        [cell.likeButton setImage:[UIImage imageNamed:@"favor-icon"] forState: UIControlStateNormal];
+    }
+    
+    if(mytweet.retweeted == YES) {
+        
+        [cell.retweetButton setImage:[UIImage imageNamed:@"retweet-icon-green"] forState: UIControlStateNormal];
+    }
+    else {
+        [cell.retweetButton setImage:[UIImage imageNamed:@"retweet-icon"] forState: UIControlStateNormal];
+    }
+    
+    
+    cell.retweetCount.text = [NSString stringWithFormat:@"%i", mytweet.retweetCount];
+    cell.timePosted.text = mytweet.createdAtString;
+    
     NSString * URLString = mytweet.user.profilePicture;
     NSURL *url = [NSURL URLWithString:URLString];
     [cell.profilePicture setImageWithURL:url placeholderImage:nil];
+    
+    
     cell.likeCount.text = [NSString stringWithFormat:@"%i", mytweet.favoriteCount];
+    
+    cell.tweet = mytweet; 
 
     return cell;
 //

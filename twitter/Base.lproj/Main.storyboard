@@ -127,6 +127,9 @@
                                                         <constraint firstAttribute="width" constant="30" id="yGY-yb-2iz"/>
                                                     </constraints>
                                                     <state key="normal" image="retweet-icon"/>
+                                                    <connections>
+                                                        <action selector="didTapRetweet:" destination="cSY-84-vh1" eventType="touchUpInside" id="lgm-zk-vqB"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OfH-T2-I2G">
                                                     <rect key="frame" x="305" y="62" width="42" height="30"/>
@@ -176,8 +179,13 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="likeButton" destination="veG-5z-HKt" id="bZ6-CD-hJc"/>
                                             <outlet property="likeCount" destination="Tug-33-akR" id="7pb-p5-TDn"/>
                                             <outlet property="profilePicture" destination="MhH-AC-9rq" id="def-af-AoY"/>
+                                            <outlet property="retweetButton" destination="Ojj-9p-ilc" id="HpL-xk-P1Y"/>
+                                            <outlet property="retweetCount" destination="OfH-T2-I2G" id="xhO-Cn-8cJ"/>
+                                            <outlet property="screenName" destination="MQF-ih-zvm" id="Huh-WS-4fZ"/>
+                                            <outlet property="timePosted" destination="xfg-Qe-7Ds" id="BxK-6y-Sxu"/>
                                             <outlet property="tweetMessage" destination="r1e-t2-Wyh" id="rml-wo-tH8"/>
                                             <outlet property="userName" destination="MQO-eW-mab" id="HDb-KC-tVB"/>
                                         </connections>
