@@ -15,6 +15,7 @@
 #import "TweetCell.h"
 #import "ComposeViewController.h"
 #import "DateTools.h"
+#import "DetailsViewController.h"
 
 @interface TimelineViewController () <UITableViewDelegate, UITableViewDataSource, ComposeViewControllerDelegate>
 
@@ -139,10 +140,23 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if([sender isKindOfClass:[UIBarButtonItem class]]) {
+        NSLog(@"%@", sender);
+        UINavigationController *navigationController = [segue destinationViewController];
+        ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
+        composeController.delegate = self;
     
-    UINavigationController *navigationController = [segue destinationViewController];
-    ComposeViewController *composeController = (ComposeViewController*)navigationController.topViewController;
-    composeController.delegate = self;
+    }
+    else {
+        
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+        Tweet *tweet = self.arrayOfTweets[indexPath.row];
+        DetailsViewController *detailViewController = [segue destinationViewController];
+        
+        detailViewController.tweet = tweet; 
+    }
+
 }
 
 

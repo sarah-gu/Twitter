@@ -8,8 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "Tweet.h"
-
+//#import "TimelineViewController.h"
 NS_ASSUME_NONNULL_BEGIN
+
+@protocol TweetCellDelegate
+
+-(void)didTweet:(Tweet *)tweet;
+
+@end
 
 @interface TweetCell : UITableViewCell
 
@@ -23,6 +29,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *retweetButton;
 @property (weak, nonatomic) IBOutlet UILabel *timePosted;
 @property (weak, nonatomic) IBOutlet UILabel *retweetCount;
+
+@property (nonatomic, weak) id<TweetCellDelegate> delegate; 
+//@property (weak, nonatomic) Tweet *delegate;
 
 @end
 
