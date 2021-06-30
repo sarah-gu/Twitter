@@ -9,6 +9,11 @@
 #import "TweetCell.h"
 
 @implementation TweetCell
+- (IBAction)didTapFavorite:(id)sender {
+    self.tweet.favorited = YES;
+    self.tweet.favoriteCount += 1; 
+    
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
