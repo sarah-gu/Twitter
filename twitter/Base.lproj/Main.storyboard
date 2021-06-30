@@ -188,6 +188,7 @@
                                             <outlet property="timePosted" destination="xfg-Qe-7Ds" id="BxK-6y-Sxu"/>
                                             <outlet property="tweetMessage" destination="r1e-t2-Wyh" id="rml-wo-tH8"/>
                                             <outlet property="userName" destination="MQO-eW-mab" id="HDb-KC-tVB"/>
+                                            <segue destination="Gi0-co-uov" kind="show" id="FiZ-9X-JjE"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -285,6 +286,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FFr-tO-bJy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2104.8000000000002" y="752.47376311844084"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qWP-n4-J8M">
+            <objects>
+                <viewController id="Gi0-co-uov" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="78o-gb-Bgb">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zzA-3b-fMj">
+                                <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <viewLayoutGuide key="contentLayoutGuide" id="wuU-9q-wDr"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="MCR-3n-6Je"/>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="0od-ru-fGT"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="J1N-oz-yEj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0pc-vf-ADo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2656.9230769230767" y="35.545023696682463"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="is8-1U-zdg">

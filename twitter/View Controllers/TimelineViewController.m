@@ -14,6 +14,7 @@
 #import "Tweet.h"
 #import "TweetCell.h"
 #import "ComposeViewController.h"
+#import "DateTools.h"
 
 @interface TimelineViewController () <UITableViewDelegate, UITableViewDataSource, ComposeViewControllerDelegate>
 
@@ -116,6 +117,10 @@
     
     
     cell.likeCount.text = [NSString stringWithFormat:@"%i", mytweet.favoriteCount];
+    
+    
+   // NSInteger minutesSinceTweet = []
+    
     
     cell.tweet = mytweet; 
 
