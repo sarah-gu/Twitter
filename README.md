@@ -53,7 +53,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-![Twitter Demo](https://github.com/sarah-gu/Twitter/main/blob/Twitter.gif)
+![Twitter Demo](https://github.com/sarah-gu/Twitter/blob/main/Twitter.gif)
 
 GIF created with [Kap](https://ezgif.com/).
 
