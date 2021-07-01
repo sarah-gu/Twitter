@@ -11,11 +11,18 @@
 @implementation User
 
 -(instancetype)initWithDictionary:(NSDictionary *)dictionary{
+    NSLog(@"%@", dictionary); 
     self = [super init];
     if (self){
         self.name = dictionary[@"name"];
         self.screenName = dictionary[@"screen_name"];
         self.profilePicture = dictionary[@"profile_image_url_https"];
+        
+        self.followers =  [dictionary[@"followers_count"] intValue];
+        
+        self.following =  [dictionary[@"friends_count"] intValue];
+        
+        self.numTweets = [dictionary[@"statuses_count"] intValue];
     }
     return self;
 }

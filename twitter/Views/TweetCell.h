@@ -11,11 +11,7 @@
 //#import "TimelineViewController.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@protocol TweetCellDelegate
-
--(void)didTweet:(Tweet *)tweet;
-
-@end
+@protocol TweetCellDelegate;
 
 @interface TweetCell : UITableViewCell
 
@@ -32,6 +28,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, weak) id<TweetCellDelegate> delegate; 
 //@property (weak, nonatomic) Tweet *delegate;
+
+@end
+
+@protocol TweetCellDelegate
+
+-(void)didTweet:(Tweet *)tweet;
+-(void)tweetCell:(TweetCell *) tweetCell didTap:(User *)user;
 
 @end
 

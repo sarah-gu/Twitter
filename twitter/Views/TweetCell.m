@@ -88,9 +88,18 @@
     self.retweetCount.text = [NSString stringWithFormat:@"%i", self.tweet.retweetCount];
 }
 
+-(void)didTapUserProfile:(UITapGestureRecognizer *)sender {
+    
+    [self.delegate tweetCell:self didTap:self.tweet.user]; 
+}
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    UITapGestureRecognizer *profileTapGestureRecognizer = [[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(didTapUserProfile:)];
+    
+    [self.profilePicture addGestureRecognizer:profileTapGestureRecognizer];
+    [self.profilePicture setUserInteractionEnabled:YES]; 
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

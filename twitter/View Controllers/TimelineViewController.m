@@ -16,8 +16,9 @@
 #import "ComposeViewController.h"
 #import "DateTools.h"
 #import "DetailsViewController.h"
+#import "ProfileViewController.h"
 
-@interface TimelineViewController () <UITableViewDelegate, UITableViewDataSource, ComposeViewControllerDelegate>
+@interface TimelineViewController () <UITableViewDelegate, UITableViewDataSource, ComposeViewControllerDelegate, TweetCellDelegate>
 
 @property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 @property (nonatomic, strong) NSMutableArray *arrayOfTweets;
@@ -84,6 +85,8 @@
     
     TweetCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TweetCell" ];
     
+    
+    
     Tweet *mytweet = [self.arrayOfTweets objectAtIndex:indexPath.row];
     
     //Tweet * mytweet = self.arrayOfTweets[indexPath.row]; //gets next tweet to load
@@ -128,7 +131,7 @@
     
    // NSInteger minutesSinceTweet = []
     
-    
+    cell.delegate = self; //delegate property assignment
     cell.tweet = mytweet; 
 
     return cell;
@@ -153,6 +156,12 @@
         composeController.delegate = self;
     
     }
+    else if ([@"profileSegue"  isEqual: segue.identifier]){
+        User * myUser = sender;
+        ProfileViewController *profileViewController = [segue destinationViewController];
+        
+        profileViewController.user = myUser;
+    }
     else {
         
         UITableViewCell *tappedCell = sender;
@@ -173,4 +182,9 @@
     [self.tableView reloadData];
 }
 
+-(void)tweetCell:(TweetCell *)tweetCell didTap:(User *)user {
+    
+    [self performSegueWithIdentifier:@"profileSegue" sender:user];
+    
+}
 @end
