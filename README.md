@@ -1,8 +1,8 @@
-# Project 3 - *Name of App Here*
+# Project 3 - *Twitter*
 
-**Name of your app** is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
+**Twitter** is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
 
-Time spent: **X** hours spent in total
+Time spent: **25** hours spent in total
 
 ## User Stories
 
@@ -26,13 +26,13 @@ The following **optional** features are implemented:
   - Contains the user header view: picture and tagline
   - Contains a section with the users basic stats: # tweets, # following, # followers
   - [ ] Profile view should include that user's timeline
-- [ ] User should be able to unretweet and unfavorite and should decrement the retweet and favorite count. Refer to [[this guide|unretweeting]] for help on implementing unretweeting.
-- [ ] Links in tweets are clickable.
-- [ ] User can tap the profile image in any tweet to see another user's profile
+- [X] User should be able to unretweet and unfavorite and should decrement the retweet and favorite count. Refer to [[this guide|unretweeting]] for help on implementing unretweeting.
+- [X] Links in tweets are clickable.
+- [X] User can tap the profile image in any tweet to see another user's profile
   - Contains the user header view: picture and tagline
   - Contains a section with the users basic stats: # tweets, # following, # followers
 - [ ] User can load more tweets once they reach the bottom of the feed using infinite loading similar to the actual Twitter client.
-- [ ] When composing, you should have a countdown for the number of characters remaining for the tweet (out of 280) (**1 point**)
+- [X] When composing, you should have a countdown for the number of characters remaining for the tweet (out of 280) (**1 point**)
 - [ ] After creating a new tweet, a user should be able to view it in the timeline immediately without refetching the timeline from the network.
 - [ ] User can reply to any tweet, and replies should be prefixed with the username and the reply_id should be set when posting the tweet (**2 points**)
 - [ ] User sees embedded images in tweet if available
@@ -42,24 +42,24 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] List anything else that you can get done to improve the app functionality!
+-[X] Improved the UI to match real Twitter colors
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
 
-1.
-2.
+1. How to add the Tab views without disrupting the current workflow of the app
+2. How to use API requests to load comments and retweets 
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+![Twitter Demo](https://github.com/sarah-gu/Twitter/main/blob/Twitter.gif)
 
-GIF created with [Kap](https://getkap.co/).
+GIF created with [Kap](https://ezgif.com/).
 
 ## Notes
 
-Working with autolayout for the first time was a challenge in the Twitter App. 
+Working with autolayout for the first time was a challenge in the Twitter App. Also, it was a challenge to keep track of all of the moving parts in this project - we had a large number of models and protocols as well as buttons corresponding to all the different features in Twitter.  
 
 ## Credits
 
@@ -67,6 +67,8 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 
 - [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
 - DateTools - API for better date logging
+- Twitter API 
+
 ## License
 
     Copyright [2021] [Sarah Gu]
