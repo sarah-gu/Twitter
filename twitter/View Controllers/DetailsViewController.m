@@ -31,6 +31,8 @@
     // Do any additional setup after loading the view.
     
     NSString * URLString = self.tweet.user.profilePicture;
+    URLString = [URLString
+               stringByReplacingOccurrencesOfString:@"_normal" withString:@""];
     NSURL *url = [NSURL URLWithString:URLString];
     [self.profilePicture setImageWithURL:url placeholderImage:nil];
     

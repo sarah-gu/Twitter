@@ -113,7 +113,13 @@
     cell.timePosted.text = mytweet.createdAtString;
     
     NSString * URLString = mytweet.user.profilePicture;
+    
+    URLString = [URLString
+               stringByReplacingOccurrencesOfString:@"_normal" withString:@""];
+    
     NSURL *url = [NSURL URLWithString:URLString];
+    
+
     [cell.profilePicture setImageWithURL:url placeholderImage:nil];
     
     

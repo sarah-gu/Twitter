@@ -9,8 +9,11 @@
 #import "ComposeViewController.h"
 #import "APIManager.h"
 #import "Tweet.h"
+#import <UIKit/UIKit.h>
+
 @interface ComposeViewController () <UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *toTweet;
+@property (weak, nonatomic) IBOutlet UILabel *characterCount;
 
 @end
 
@@ -38,9 +41,48 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    self.toTweet.text = @"Write your tweet here";
+    self.toTweet.textColor = UIColor.lightGrayColor;
+
+   // self.toTweet.becomeFirstResponder();
+
+//    textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
+//    self.toTweet = RSKPlaceholderTextView(frame:CGRect(x:0, y:20, width:self.view.frame.width, height:100));
+//    self.toTweet.placeholder = "Write your tweet here: "
+    
+    
     self.toTweet.delegate = self;
 }
 
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    if (self.toTweet.textColor == UIColor.lightGrayColor) {
+        self.toTweet.text = @"";
+        self.toTweet.textColor = UIColor.blackColor;
+    }
+}
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    if ([self.toTweet.text  isEqual: @""]) {
+
+        self.toTweet.text = @"Write your tweet here";
+        self.toTweet.textColor = UIColor.lightGrayColor;
+    }
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    int characterLimit = 140;
+    
+    NSString *newText = [self.toTweet.text stringByReplacingCharactersInRange:range withString:text];
+    
+    long mynewLength = [newText length];
+    
+    self.characterCount.text = [NSString stringWithFormat:@"%ld Characters Left", characterLimit - mynewLength];
+    
+    
+    return newText.length < characterLimit;
+    
+}
 /*
 #pragma mark - Navigation
 

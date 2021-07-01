@@ -66,13 +66,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77K-lf-nGe">
-                                <rect key="frame" x="149" y="323" width="76" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Kt7-xn-jhH">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -203,18 +196,21 @@
                             <constraint firstAttribute="bottom" secondItem="Kt7-xn-jhH" secondAttribute="bottom" id="sbG-aY-MtW"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Home Timeline" id="MOc-fV-EZE">
+                    <navigationItem key="navigationItem" title="Home Timeline" id="MOc-fV-EZE" colorLabel="IBBuiltInLabel-Blue">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="dJ6-gU-8hp">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="j4I-ZJ-T3e">
                                 <rect key="frame" x="16" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Logout"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" systemColor="systemBackgroundColor"/>
+                                </state>
                                 <connections>
                                     <action selector="logoutMethod:" destination="Lbl-k5-U4i" eventType="touchUpInside" id="Dz6-EQ-7ay"/>
                                 </connections>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" image="edit-icon" id="lwm-05-EJw">
+                        <barButtonItem key="rightBarButtonItem" image="paperplane" catalog="system" id="lwm-05-EJw">
+                            <color key="tintColor" systemColor="secondarySystemGroupedBackgroundColor"/>
                             <connections>
                                 <segue destination="7cc-Lt-sys" kind="presentation" id="4aZ-vX-8Og"/>
                             </connections>
@@ -237,6 +233,13 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ytz-Ev-cUB">
                         <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.43583904248857475" green="0.75029654011918157" blue="0.97062175728611111" alpha="0.89846708336654979" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" systemColor="systemBackgroundColor"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" systemColor="systemBackgroundColor"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -255,37 +258,82 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Sample Text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eGv-Xl-Php">
-                                <rect key="frame" x="0.0" y="44" width="375" height="403"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Sample Text" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eGv-Xl-Php">
+                                <rect key="frame" x="0.0" y="156" width="390" height="390"/>
+                                <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="390" id="vQx-Nx-FXe"/>
+                                </constraints>
                                 <color key="textColor" systemColor="labelColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="22"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IG7-SY-eYD">
+                                <rect key="frame" x="0.0" y="56" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="V67-GB-tVf"/>
+                                    <constraint firstAttribute="height" constant="100" id="sCm-To-wDH"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbP-22-d2y">
+                                <rect key="frame" x="110" y="104" width="83" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ocn-4a-m1F">
+                                <rect key="frame" x="305" y="554" width="69" height="45"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="27"/>
+                                <state key="normal" title="Tweet">
+                                    <color key="titleColor" red="0.43165578259999998" green="0.74309506179999996" blue="0.96130555870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleShadowColor" red="0.55105527300000001" green="0.86203420620000004" blue="0.96130555870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="140 Characters Left" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CTz-O0-G9l">
+                                <rect key="frame" x="20" y="566.33333333333337" width="150.33333333333334" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GjY-Vw-RA4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cbP-22-d2y" firstAttribute="leading" secondItem="IG7-SY-eYD" secondAttribute="trailing" constant="10" id="56K-aM-nMT"/>
+                            <constraint firstItem="ocn-4a-m1F" firstAttribute="centerY" secondItem="CTz-O0-G9l" secondAttribute="centerY" id="7Pu-tO-H17"/>
+                            <constraint firstItem="IG7-SY-eYD" firstAttribute="leading" secondItem="GjY-Vw-RA4" secondAttribute="leading" id="7rt-JD-HWb"/>
+                            <constraint firstItem="eGv-Xl-Php" firstAttribute="top" secondItem="cbP-22-d2y" secondAttribute="bottom" constant="10" id="8Ud-tb-BJM"/>
+                            <constraint firstItem="eGv-Xl-Php" firstAttribute="leading" secondItem="GjY-Vw-RA4" secondAttribute="leading" id="DYn-Tc-efc"/>
+                            <constraint firstItem="cbP-22-d2y" firstAttribute="top" secondItem="GjY-Vw-RA4" secondAttribute="top" constant="48" id="Dd8-6Z-wy6"/>
+                            <constraint firstItem="eGv-Xl-Php" firstAttribute="trailing" secondItem="GjY-Vw-RA4" secondAttribute="trailing" id="LuZ-0i-ZgW"/>
+                            <constraint firstItem="CTz-O0-G9l" firstAttribute="leading" secondItem="GjY-Vw-RA4" secondAttribute="leading" constant="20" id="j0t-63-Yus"/>
+                            <constraint firstItem="GjY-Vw-RA4" firstAttribute="trailing" secondItem="ocn-4a-m1F" secondAttribute="trailing" constant="16" id="nLh-yr-KLJ"/>
+                            <constraint firstItem="IG7-SY-eYD" firstAttribute="top" secondItem="GjY-Vw-RA4" secondAttribute="top" id="pj9-T6-E85"/>
+                            <constraint firstItem="ocn-4a-m1F" firstAttribute="top" secondItem="eGv-Xl-Php" secondAttribute="bottom" constant="8" id="zhf-jf-DAY"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9ji-Mc-huF">
                         <barButtonItem key="leftBarButtonItem" image="close-icon" id="4FY-Rh-9SE">
+                            <color key="tintColor" red="0.55105527300000001" green="0.86203420620000004" blue="0.96130555870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="closeTweet:" destination="aaI-Js-2Vl" id="yb8-X4-PTl"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Tweet" id="TW3-N1-jMR">
+                            <color key="tintColor" red="0.43165578259999998" green="0.74309506179999996" blue="0.96130555870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <connections>
                                 <action selector="writeTweet:" destination="aaI-Js-2Vl" id="SiQ-RI-EAI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="characterCount" destination="CTz-O0-G9l" id="2lE-Uu-Mqe"/>
                         <outlet property="toTweet" destination="eGv-Xl-Php" id="cDi-pb-r6b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FFr-tO-bJy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2104.8000000000002" y="752.47376311844084"/>
+            <point key="canvasLocation" x="2104.6153846153848" y="752.1327014218009"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="qWP-n4-J8M">
@@ -376,7 +424,7 @@
                             <constraint firstItem="z1J-xz-8Gr" firstAttribute="leading" secondItem="Wph-3O-tQf" secondAttribute="trailing" constant="10" id="yVT-ja-onk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="J1N-oz-yEj"/>
+                    <navigationItem key="navigationItem" id="J1N-oz-yEj" colorLabel="IBBuiltInLabel-Orange"/>
                     <connections>
                         <outlet property="likeButton" destination="Wph-3O-tQf" id="jcn-s5-XIq"/>
                         <outlet property="likeCount" destination="z1J-xz-8Gr" id="BrZ-KK-ukd"/>
@@ -411,17 +459,24 @@
             <point key="canvasLocation" x="1165.5999999999999" y="752.47376311844084"/>
         </scene>
     </scenes>
+    <color key="tintColor" systemColor="systemBackgroundColor"/>
     <resources>
         <image name="TwitterLogoBlue" width="133.33332824707031" height="133.33332824707031"/>
         <image name="close-icon" width="26" height="24"/>
-        <image name="edit-icon" width="30" height="27"/>
         <image name="favor-icon" width="30" height="30"/>
+        <image name="paperplane" catalog="system" width="128" height="118"/>
         <image name="retweet-icon" width="30" height="30"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="secondarySystemGroupedBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemGroupedBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
