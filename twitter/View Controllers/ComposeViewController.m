@@ -14,6 +14,8 @@
 @interface ComposeViewController () <UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *toTweet;
 @property (weak, nonatomic) IBOutlet UILabel *characterCount;
+@property (weak, nonatomic) IBOutlet UIImageView *myPFP;
+@property (weak, nonatomic) IBOutlet UILabel *myName;
 
 @end
 

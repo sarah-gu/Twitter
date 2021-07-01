@@ -90,7 +90,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1e-t2-Wyh">
+                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r1e-t2-Wyh">
                                                     <rect key="frame" x="85" y="40" width="270" height="20.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -328,6 +328,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="characterCount" destination="CTz-O0-G9l" id="2lE-Uu-Mqe"/>
+                        <outlet property="myName" destination="cbP-22-d2y" id="jmk-LX-2Gv"/>
+                        <outlet property="myPFP" destination="IG7-SY-eYD" id="y4x-6j-q04"/>
                         <outlet property="toTweet" destination="eGv-Xl-Php" id="cDi-pb-r6b"/>
                     </connections>
                 </viewController>
@@ -358,12 +360,6 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@sarahwgu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wes-N1-uOW">
                                 <rect key="frame" x="171" y="305" width="89" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lorem ipsum" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L0B-Sy-Xlg">
-                                <rect key="frame" x="20" y="352" width="350" height="20.333333333333314"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -401,6 +397,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" editable="NO" text="lorem ipsum" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EPM-5y-UFa">
+                                <rect key="frame" x="10" y="352" width="370" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.55105527300000001" green="0.86203420620000004" blue="0.96130555870000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="kFs-BA-fn6"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="26"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0od-ru-fGT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -408,14 +416,14 @@
                             <constraint firstItem="n56-Ap-P9U" firstAttribute="top" secondItem="v4h-q9-28u" secondAttribute="bottom" constant="20" id="6bs-GD-PFm"/>
                             <constraint firstItem="0od-ru-fGT" firstAttribute="bottom" secondItem="Wph-3O-tQf" secondAttribute="bottom" constant="20" id="A9z-Tf-kl3"/>
                             <constraint firstItem="z1J-xz-8Gr" firstAttribute="centerY" secondItem="Wph-3O-tQf" secondAttribute="centerY" id="LIs-Lo-4pK"/>
-                            <constraint firstItem="L0B-Sy-Xlg" firstAttribute="leading" secondItem="0od-ru-fGT" secondAttribute="leading" constant="20" id="Ptr-91-k9o"/>
                             <constraint firstItem="2L4-i5-0qk" firstAttribute="leading" secondItem="u0d-hR-6zw" secondAttribute="trailing" constant="20" id="RBf-M5-qR4"/>
                             <constraint firstItem="Wes-N1-uOW" firstAttribute="centerY" secondItem="n56-Ap-P9U" secondAttribute="centerY" id="SUm-kD-dY9"/>
                             <constraint firstItem="n56-Ap-P9U" firstAttribute="leading" secondItem="0od-ru-fGT" secondAttribute="leading" constant="20" id="UJZ-WH-be5"/>
+                            <constraint firstItem="EPM-5y-UFa" firstAttribute="top" secondItem="n56-Ap-P9U" secondAttribute="bottom" constant="20" id="Xfy-i4-6iG"/>
                             <constraint firstItem="2L4-i5-0qk" firstAttribute="centerY" secondItem="u0d-hR-6zw" secondAttribute="centerY" id="YIh-t6-55k"/>
+                            <constraint firstItem="EPM-5y-UFa" firstAttribute="leading" secondItem="0od-ru-fGT" secondAttribute="leading" constant="10" id="dBd-kV-BOz"/>
+                            <constraint firstItem="0od-ru-fGT" firstAttribute="trailing" secondItem="EPM-5y-UFa" secondAttribute="trailing" constant="10" id="dZY-TG-KNe"/>
                             <constraint firstItem="u0d-hR-6zw" firstAttribute="centerY" secondItem="Wph-3O-tQf" secondAttribute="centerY" id="fxq-NU-NXv"/>
-                            <constraint firstItem="L0B-Sy-Xlg" firstAttribute="top" secondItem="n56-Ap-P9U" secondAttribute="bottom" constant="20" id="jTq-kD-Seu"/>
-                            <constraint firstItem="0od-ru-fGT" firstAttribute="trailing" secondItem="L0B-Sy-Xlg" secondAttribute="trailing" constant="20" id="lKN-9m-u48"/>
                             <constraint firstItem="u0d-hR-6zw" firstAttribute="leading" secondItem="z1J-xz-8Gr" secondAttribute="trailing" constant="50" id="nXF-qb-8ka"/>
                             <constraint firstItem="Wph-3O-tQf" firstAttribute="leading" secondItem="0od-ru-fGT" secondAttribute="leading" constant="20" id="rSl-vo-Vlr"/>
                             <constraint firstItem="v4h-q9-28u" firstAttribute="top" secondItem="0od-ru-fGT" secondAttribute="top" id="uBl-Q8-OpF"/>
@@ -432,7 +440,7 @@
                         <outlet property="retweetButton" destination="u0d-hR-6zw" id="ntX-22-q1i"/>
                         <outlet property="retweetCount" destination="2L4-i5-0qk" id="4IK-i5-EtK"/>
                         <outlet property="screenName" destination="n56-Ap-P9U" id="jYk-IS-SPB"/>
-                        <outlet property="tweetMessage" destination="L0B-Sy-Xlg" id="Cid-bK-SFA"/>
+                        <outlet property="tweetMessage" destination="EPM-5y-UFa" id="4p3-N0-8yw"/>
                         <outlet property="userName" destination="Wes-N1-uOW" id="kwd-n9-7Qh"/>
                     </connections>
                 </viewController>
