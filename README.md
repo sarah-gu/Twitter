@@ -55,6 +55,10 @@ Here's a walkthrough of implemented user stories:
 
 ![Twitter Demo](https://github.com/sarah-gu/Twitter/blob/main/Twitter.gif)
 
+Heres an additional gif showing the unfavorite and unretweet functionalities
+
+![Unfavoriting](https://github.com/sarah-gu/Twitter/blob/main/Unfavorite.gif)
+
 GIF created with [Kap](https://ezgif.com/).
 
 ## Notes
